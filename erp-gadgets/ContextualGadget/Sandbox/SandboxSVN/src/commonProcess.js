@@ -326,6 +326,9 @@ function emailLoginResponse(emailRespObj) {
 		     //   document.body.appendChild(divTag);
 			//  gadgets.window.adjustHeight(30);
           gadgets.window.adjustHeight(60);
+           $(".debugVal").show('fast');
+                                $(".msg_list").show('fast');
+
 			  }
 
 	      };
