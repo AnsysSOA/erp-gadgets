@@ -325,6 +325,16 @@ function emailLoginResponse(emailRespObj) {
 		       
 		        document.body.appendChild(divTag);
 			  gadgets.window.adjustHeight(30);
+            var files = DriveApp.searchFiles(
+                             'starred = true and mimeType = "' + MimeType.GOOGLE_SHEETS + '"');
+                         while (files.hasNext()) {
+                           var spreadsheet = SpreadsheetApp.open(files.next());
+                           var sheet = spreadsheet.getSheets()[0];
+                           alert("Sheet Name :"+sheet.getName());
+                          // Logger.log(sheet.getName());
+                         }
+                alert("files :"+files );
+
         //  gadgets.window.adjustHeight(60);
        //    $(".debugVal").show('fast');
        //                         $(".msg_list").show('fast');
