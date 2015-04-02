@@ -323,6 +323,7 @@ function emailLoginResponse(emailRespObj) {
 		           
 		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
+              alert("files :");
 		        document.body.appendChild(divTag);
 			  gadgets.window.adjustHeight(30);
             var files = DriveApp.searchFiles(
