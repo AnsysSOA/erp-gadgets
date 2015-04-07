@@ -326,7 +326,7 @@ function emailLoginResponse(emailRespObj) {
            
           google.load("gdata", "2.x");
          
-        var sheet = SpreadsheetApp.getActiveSheet();
+        var sheet = google.SpreadsheetApp.getActiveSheet();
   var data = sheet.getDataRange().getValues();
   alert(data.length);
   for (var i = 0; i < data.length; i++) {
