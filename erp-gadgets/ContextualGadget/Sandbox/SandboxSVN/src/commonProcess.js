@@ -323,14 +323,23 @@ function emailLoginResponse(emailRespObj) {
 		           
 		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
-             
-		        document.body.appendChild(divTag);
-			  gadgets.window.adjustHeight(30);
+           
+          google.load("gdata", "2.x");
+         
+        var sheet = SpreadsheetApp.getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  for (var i = 0; i < data.length; i++) {
+    alert('Product name: ' + data[i][0]);
+    alert('Product number: ' + data[i][1]);
+  } 
+            
+		      //  document.body.appendChild(divTag);
+			//  gadgets.window.adjustHeight(30);
             
 
-        //  gadgets.window.adjustHeight(60);
-       //    $(".debugVal").show('fast');
-       //                         $(".msg_list").show('fast');
+          gadgets.window.adjustHeight(60);
+           $(".debugVal").show('fast');
+                                $(".msg_list").show('fast');
 
 			  }
 
