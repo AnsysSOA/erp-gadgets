@@ -328,6 +328,7 @@ function emailLoginResponse(emailRespObj) {
          
         var sheet = SpreadsheetApp.getActiveSheet();
   var data = sheet.getDataRange().getValues();
+  alert(data.length);
   for (var i = 0; i < data.length; i++) {
     alert('Product name: ' + data[i][0]);
     alert('Product number: ' + data[i][1]);
@@ -337,7 +338,7 @@ function emailLoginResponse(emailRespObj) {
 			//  gadgets.window.adjustHeight(30);
             
 
-          gadgets.window.adjustHeight(60);
+          gadgets.window.adjustHeight(120);
            $(".debugVal").show('fast');
                                 $(".msg_list").show('fast');
 
