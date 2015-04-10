@@ -324,16 +324,7 @@ function emailLoginResponse(emailRespObj) {
 		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
            
-          google.load("gdata", "2.x");
-         
-        var sheet = google.SpreadsheetApp.getActiveSheet();
-  var data = sheet.getDataRange().getValues();
-  alert(data.length);
-  for (var i = 0; i < data.length; i++) {
-    alert('Product name: ' + data[i][0]);
-    alert('Product number: ' + data[i][1]);
-  } 
-            
+                   
 		      //  document.body.appendChild(divTag);
 			//  gadgets.window.adjustHeight(30);
             
