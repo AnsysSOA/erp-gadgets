@@ -325,13 +325,13 @@ function emailLoginResponse(emailRespObj) {
 		       
            
                    
-		      //  document.body.appendChild(divTag);
-			//  gadgets.window.adjustHeight(30);
+		       document.body.appendChild(divTag);
+			  gadgets.window.adjustHeight(30);
             
 
-          gadgets.window.adjustHeight(120);
-           $(".debugVal").show('fast');
-                                $(".msg_list").show('fast');
+         // gadgets.window.adjustHeight(120);
+       //    $(".debugVal").show('fast');
+                          //      $(".msg_list").show('fast');
 
 			  }
 
