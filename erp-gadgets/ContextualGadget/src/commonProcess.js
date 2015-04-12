@@ -425,12 +425,12 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-   alert("inside login request");
-   alert("inside login request Login Name :"+prefs.getString("LoginName"));
-   alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-   alert("inside login request System Time:"+sessionTime);
+  // alert("inside login request");
+ //  alert("inside login request Login Name :"+prefs.getString("LoginName"));
+ //  alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
+ //  alert("inside login request System Time:"+sessionTime);
    prefs.setString("LoginExpire","");
-      alert("inside login request Login Name :"+prefs.getString("LoginName"));
+   //   alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -458,7 +458,7 @@ function emailLoginrequest() {
 //alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
+    		 // alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
             	$(".msg_list").hide('fast');
