@@ -430,6 +430,7 @@ function emailLoginrequest() {
    alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
    alert("inside login request System Time:"+sessionTime);
    prefs.setString("LoginExpire","");
+      alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -472,7 +473,7 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-					 // alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
+					 alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
 						  else
