@@ -250,12 +250,12 @@ function emailLoginResponse(emailRespObj) {
 	debug("Inside emailLoginResponse method Begin","");
 	 var emailString=emailRespObj.text;
  
-  alert("Data :"+emailRespObj.data);
+  //alert("Data :"+emailRespObj.data);
 		  var text=emailRespObj;
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 		  if(emailString=="INVALID")
 			  {
 			//  alert("emailString inside invalid:"+emailString);
@@ -429,7 +429,7 @@ function emailLoginrequest() {
  //  alert("inside login request Login Name :"+prefs.getString("LoginName"));
  //  alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
  //  alert("inside login request System Time:"+sessionTime);
-   prefs.setString("LoginExpire","");
+ //  prefs.setString("LoginExpire","");
    //   alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
@@ -463,7 +463,7 @@ function emailLoginrequest() {
 	    		  	$(".debugVal").hide('fast');
             	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
-	    		  	alert("inside request method");
+	    		  //	alert("inside request method");
 	    		  	var params = {};
 	    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
 	    		  	params['AUTHORIZATION'] = 'SIGNED';
@@ -473,7 +473,7 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-					 alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
+				  //  alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
 						  else
