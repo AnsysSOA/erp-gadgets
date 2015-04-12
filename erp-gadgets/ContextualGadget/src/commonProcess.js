@@ -250,6 +250,7 @@ function emailLoginResponse(emailRespObj) {
 	debug("Inside emailLoginResponse method Begin","");
 	 var emailString=emailRespObj.text;
  
+  alert("Data :"+emailRespObj.data);
 		  var text=emailRespObj;
 		  if(emailRespObj.rc=="200")
 		  {
@@ -338,8 +339,7 @@ function emailLoginResponse(emailRespObj) {
 	debug("Inside employeeLogin method Employee Response Text",EmployeeLoginObj.text);
 	debug("Inside employeeLogin method Employee Response authErrorText",EmployeeLoginObj.oauthErrorText);
 
-      alert("Data :"+EmployeeLoginObj.data);
-
+    
 	var emploginName;	
 	var text=EmployeeLoginObj.text;
 	debug("text",text);
