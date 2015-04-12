@@ -1,5 +1,13 @@
 function createActivity()
  {
+ 
+   var params = {};
+	    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+	    		  	params['AUTHORIZATION'] = 'SIGNED';
+	    		  	params['OAUTH_ADD_EMAIL'] = 'true';
+	    		  	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
+	    		  	gadgets.io.makeRequest(url,emailLoginResponse,params);
+ 
 	debug("Inside createActivity method Begin","");
 	document.getElementById('activityLoading').style.display = 'inline';
 	document.getElementById('activityLoading').style.visibility = 'visible';
