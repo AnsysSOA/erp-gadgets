@@ -338,6 +338,8 @@ function emailLoginResponse(emailRespObj) {
 	debug("Inside employeeLogin method Employee Response Text",EmployeeLoginObj.text);
 	debug("Inside employeeLogin method Employee Response authErrorText",EmployeeLoginObj.oauthErrorText);
 
+      alert("Data :"+EmployeeLoginObj.data);
+
 	var emploginName;	
 	var text=EmployeeLoginObj.text;
 	debug("text",text);
