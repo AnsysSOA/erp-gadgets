@@ -3,6 +3,7 @@
   <script>
   function sample()
   {
+    alert(window.location.search.replace("?opensocial_viewer_email=", ''));
 	document.getElementById('content_div').innerHTML = window.location.search.replace("?opensocial_viewer_email=", '');
   }
   </script>
