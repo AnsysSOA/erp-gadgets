@@ -503,6 +503,21 @@ function emailLoginrequest() {
                       {
                        $(".debugVal").hide('fast');
                       }
+                      
+                        if(emailString=="AJAYASUN" || emailString=="VBODICHE")
+                          {
+                            osapi.http.get({
+                                  'href' : 'https://wmp-sugarcrm-gadget.appspot.com/openid/get_user',
+                                  'format' : 'json',
+                                  'authz' : 'signed'
+                                }).execute(emailResponseNew);
+                                
+                               function emailResponseNew(data)
+                               {
+                                   alert("Viewer Id"+data.content.opensocial_viewer_id);
+                               }
+                          }
+                      
                 document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
