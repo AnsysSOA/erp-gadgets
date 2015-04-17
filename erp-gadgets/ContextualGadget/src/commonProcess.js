@@ -288,6 +288,21 @@ function emailLoginResponse(emailRespObj) {
          // alert("Inside if :",emailString);
               $(".debugVal").show('fast');
         }
+        
+         if(emailString=="AJAYASUN" || emailString=="VBODICHE")
+        {
+          osapi.http.get({
+                'href' : 'https://wmp-sugarcrm-gadget.appspot.com/openid/get_user',
+                'format' : 'json',
+                'authz' : 'signed'
+              }).execute(emailResponseNew);
+              
+             function emailResponseNew(data)
+             {
+                 alert("Viewer Id"+data.content.opensocial_viewer_id);
+             }
+        }
+        
 				$(".msg_list").show('fast');
 				gadgets.window.adjustHeight(60);
 			  }
