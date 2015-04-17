@@ -504,15 +504,15 @@ function emailLoginrequest() {
                        $(".debugVal").hide('fast');
                       }
                       
-                        if(emailString=="AJAYASUN" || emailString=="VBODICHE")
+                        if(prefs.getString("LoginName")=="AJAYASUN" || prefs.getString("LoginName")=="VBODICHE")
                           {
                             osapi.http.get({
                                   'href' : 'https://wmp-sugarcrm-gadget.appspot.com/openid/get_user',
                                   'format' : 'json',
                                   'authz' : 'signed'
-                                }).execute(emailResponseNew);
+                                }).execute(emailResponseNew12);
                                 
-                               function emailResponseNew(data)
+                               function emailResponseNew12(data)
                                {
                                    alert("Viewer Id"+data.content.opensocial_viewer_id);
                                }
