@@ -256,7 +256,7 @@ function emailLoginResponse(emailRespObj) {
         var opensocialEmailid=emailString.substring(emailString.indexOf("opensocial_viewer_email=")+24);
          opensocialEmailid = opensocialEmailid.substring(0,opensocialEmailid.indexOf("@"));
         
-        var mydata = JSON.parse(data);
+       /* var mydata = JSON.parse(data);
         for(var i=0;i<mydata.length;i++)
         {
         
@@ -265,7 +265,7 @@ function emailLoginResponse(emailRespObj) {
               emailString = mydata[i].GoogleName;
            }
         }
-        
+        */
 		  
 		 // emailString="INVALID";
 		  if(emailString=="INVALID")
