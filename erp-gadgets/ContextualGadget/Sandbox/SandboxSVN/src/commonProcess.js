@@ -479,13 +479,13 @@ function emailLoginrequest() {
 prefs.set("LoginExpire",null);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    	  //   alert("inside login request if condition System Time:"+sessionTime);
+    	    alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
-	    		 // 	alert("inside request method");
-           //      alert("inside request method url :"+url);
+	    		  	alert("inside request method");
+                 alert("inside request method url :"+authURL);
 	    		  	var params = {};
 	    		    // params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  -- Commented By Venkatesan
                  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON  // Added By Venkatesan
