@@ -247,9 +247,25 @@ function emailLoginResponse(emailRespObj) {
 		  var text=emailRespObj;
 	  //   alert("RC code :"+emailRespObj.rc);
       //   alert("RC code :"+emailRespObj.text);
-		  if(emailRespObj.rc=="200")
+		  if(emailRespObj.rc=="200" || emailRespObj.rc=="400")
 		  {
-		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
+		 // emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));  -- Commented By venkatesan
+        
+        
+    
+        var opensocialEmailid=emailString.substring(emailString.indexOf("opensocial_viewer_email=")+24);
+         opensocialEmailid = opensocialEmailid.substring(0,opensocialEmailid.indexOf("@"));
+        
+        var mydata = JSON.parse(data);
+        for(var i=0;i<mydata.length;i++)
+        {
+        
+           if(mydata[i].SiebelName==opensocialEmailid)
+           {
+              emailString = mydata[i].GoogleName;
+           }
+        }
+        
 		  
 		 // emailString="INVALID";
 		  if(emailString=="INVALID")
@@ -469,11 +485,14 @@ function emailLoginrequest() {
 	    		 // 	alert("inside request method");
            //      alert("inside request method url :"+url);
 	    		  	var params = {};
-	    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+	    		    // params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  -- Commented By Venkatesan
+                 params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON  // Added By Venkatesan
 	    		  	params['AUTHORIZATION'] = 'SIGNED';
 	    		  	params['OAUTH_ADD_EMAIL'] = 'true';
 	    		  	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
-	    		  	gadgets.io.makeRequest(url,emailLoginResponse,params);
+	    		  //	gadgets.io.makeRequest(url,emailLoginResponse,params);  -- Commented By Venkatesan
+                gadgets.io.makeRequest(authURL,emailLoginResponse,params);  // Added By Venkatesan
+               
 	    		  }
 	    	  else
 	    		  {
