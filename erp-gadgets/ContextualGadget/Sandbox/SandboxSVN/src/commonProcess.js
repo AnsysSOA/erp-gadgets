@@ -354,16 +354,16 @@ function emailLoginResponse(emailRespObj) {
 
 	      };
 	 function employeeLogin(EmployeeLoginObj){
-	/*alert("Inside employeeLogin method Begin","");
+	alert("Inside employeeLogin method Begin","");
 	alert("Inside employeeLogin method Employee Response Code"+EmployeeLoginObj.rc);
 	alert("Inside employeeLogin method Employee Response Error"+EmployeeLoginObj.errors);
 	alert("Inside employeeLogin method Employee Response Data"+EmployeeLoginObj.data);
 	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
-	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
+	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);
 
 	var emploginName;	
 	var text=EmployeeLoginObj.text;
-	//alert("text"+text);
+	alert("text"+text);
 	if(EmployeeLoginObj.rc=="200")
 	{
 	if (window.DOMParser)
