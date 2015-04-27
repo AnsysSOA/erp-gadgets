@@ -197,7 +197,7 @@ function createActivity()
 		data = data + '</soapenv:Body>';
 		data = data + '</soapenv:Envelope>';
 		debug("Inside createActivity method Before send to siebel Activity data",data);
-		//alert("Before send to siebel data :"+data);
+		alert("Before send to siebel data :"+data);
 		var SOAPAction='rpc/http://siebel.com/asi/:ANSActiviytInsertOrUpdateASI';
 		invokeSiebeWebservice(data,SOAPAction,'activityResponse');
 
