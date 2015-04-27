@@ -245,8 +245,8 @@ function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
  
 		  var text=emailRespObj;
-	  //   alert("RC code :"+emailRespObj.rc);
-      //   alert("RC code :"+emailRespObj.text);
+	     alert("RC code :"+emailRespObj.rc);
+       alert("RC code :"+emailRespObj.text);
 		  if(emailRespObj.rc=="200" || emailRespObj.rc=="400")
 		  {
 		 // emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));  -- Commented By venkatesan
