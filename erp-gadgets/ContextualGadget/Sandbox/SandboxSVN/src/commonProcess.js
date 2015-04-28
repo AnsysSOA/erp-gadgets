@@ -266,6 +266,7 @@ function emailLoginResponse(emailRespObj) {
            }
         }
         
+        emailString  = emailString.toUpperCase();
 		  
 		 // emailString="INVALID";
 		  if(emailString=="INVALID")
@@ -342,13 +343,13 @@ function emailLoginResponse(emailRespObj) {
 		       
            
                    
-		      // document.body.appendChild(divTag);
-			//  gadgets.window.adjustHeight(30);
+		       document.body.appendChild(divTag);
+			  gadgets.window.adjustHeight(30);
             
 
-          gadgets.window.adjustHeight(120);
-           $(".debugVal").show('fast');
-                                $(".msg_list").show('fast');
+        //  gadgets.window.adjustHeight(120);
+          // $(".debugVal").show('fast');
+            //                    $(".msg_list").show('fast');
 
 			  }
 
@@ -476,7 +477,7 @@ function emailLoginrequest() {
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-prefs.set("LoginExpire",null);
+//prefs.set("LoginExpire",null);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
     	   // alert("inside login request if condition System Time:"+sessionTime);
