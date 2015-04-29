@@ -20,6 +20,9 @@ function createActivity()
       {
          alert("Please Select Class Value");
         saveActivity=false;
+         	document.getElementById('activityLoading').innerHTML = '';
+				document.getElementById('activityLoading').style.display = 'none';
+				document.getElementById('activityLoading').style.visibility = 'invisible';
       }
 		}
 		else
@@ -35,6 +38,9 @@ function createActivity()
             {
               alert("Please Select Class Value");
               saveActivity=false;
+               	document.getElementById('activityLoading').innerHTML = '';
+                document.getElementById('activityLoading').style.display = 'none';
+                document.getElementById('activityLoading').style.visibility = 'invisible';
             }
 			  }
 			else
