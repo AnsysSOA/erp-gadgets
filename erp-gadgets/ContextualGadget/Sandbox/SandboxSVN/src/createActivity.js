@@ -12,14 +12,30 @@ function createActivity()
 	{
 		if(document.getElementById('activtySave').value=='no')
 		{
-			saveActivity=true;
+      if(document.getElementById('classval').value!='Select One')
+      {
+			  saveActivity=true;
+      }
+      else
+      {
+         alert("Please Select Class Value");
+        saveActivity=false;
+      }
 		}
 		else
 			{
 			var r=confirm("Do your really want to create an activity with no description or details ?");
 			if (r==true)
 			  {
-				saveActivity=true;
+				      if(document.getElementById('classval').value!='Select One')
+            {
+                 saveActivity=true;
+            }
+            else
+            {
+              alert("Please Select Class Value");
+              saveActivity=false;
+            }
 			  }
 			else
 			  {
