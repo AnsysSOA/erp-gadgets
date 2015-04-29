@@ -103,8 +103,8 @@ function assignClass()
 	var classValue = document.getElementById('classval').options[selIdx].text;
 	document.getElementById('Status').selectedIndex=0;
 	debug("Inside assignClass method classValue",classValue);
-	if(classValue!='Generic') // Commented by venkatesan for class lov change
-   //if(classValue!='Account' || classValue!='Contact')
+  // if(classValue!='Generic') // Commented by venkatesan for class lov change
+   if(classValue!='Account' || classValue!='Contact')
 		{
 		debug("Inside assignClass method inside if classValue",classValue);
 		if(classValue=="Opportunity")
