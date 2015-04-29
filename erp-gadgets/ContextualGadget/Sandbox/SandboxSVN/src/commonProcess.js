@@ -104,8 +104,8 @@ function assignClass()
 	document.getElementById('Status').selectedIndex=0;
 	debug("Inside assignClass method classValue",classValue);
   // if(classValue!='Generic') // Commented by venkatesan for class lov change
-   if(classValue=='Opportunity' || classValue=='Service Request')
-		{
+   //if(classValue=='Opportunity' || classValue=='Service Request')
+	//	{
 		debug("Inside assignClass method inside if classValue",classValue);
 		if(classValue=="Opportunity")
 			{
@@ -118,10 +118,10 @@ function assignClass()
 		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		gadgets.window.adjustHeight(350);
 			}
-		else 
+		else if(classValue=="Service Request")
 			{
-			if(classValue=="Service Request")
-			{
+		  // if(classValue=="Service Request")
+			//{
 				gadgets.window.adjustHeight(350);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Service Request :&nbsp; <input type='text' name='classSelected' id='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) :&nbsp; <input type='text' name='timeSpent' id='timeSpent' size='18'></font></strong>";
@@ -132,8 +132,8 @@ function assignClass()
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
 		document.getElementById('details').value="";
-			}
-			}
+		 //  }
+		 //  }
 		}
 	else
 		{
