@@ -20,7 +20,7 @@ var SOAPparams = {};
 		SOAPparams['OAUTH_ADD_EMAIL'] = 'true';
 		SOAPparams['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 		SOAPparams[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
-    SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 100;
+    SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 200;
 
 		SOAPparams[gadgets.io.RequestParameters.HEADERS]={"Content-Type" : "'text/xml;charset=UTF-8'","SOAPAction" :"'" +soapAction+"'"};
 		SOAPparams[gadgets.io.RequestParameters.POST_DATA]=soapData;
