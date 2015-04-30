@@ -137,7 +137,7 @@ function assignClass()
 		}
 	else
 		{
-      alert("Inside else Condition");
+      //alert("Inside else Condition");
 		debug("Inside assignClass method inside else classValue",classValue);
 		debug("Inside assignClass method inside else classValue details value :",document.getElementById('details').value);
 		debug("Inside assignClass method inside else classValue emailBodyText value",document.getElementById('emailBodyText').value);
