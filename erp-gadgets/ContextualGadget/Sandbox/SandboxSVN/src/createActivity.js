@@ -299,7 +299,7 @@ try
 			m--;
 		}
 		document.CRMActivity.reset();
-		document.getElementById('classValue').innerHTML = "";
+	  // document.getElementById('classValue').innerHTML = ""; -- Comented by venkatesan
 		document.getElementById('activtySave').value="yes";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
