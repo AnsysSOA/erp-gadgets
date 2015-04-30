@@ -298,8 +298,9 @@ try
 			rowCount3--;
 			m--;
 		}
-		document.CRMActivity.reset();
-	  // document.getElementById('classValue').innerHTML = ""; -- Comented by venkatesan
+		//document.CRMActivity.reset(); -- Comented by venkatesan
+      alert("After reset");
+	   document.getElementById('classValue').innerHTML = ""; 
 		document.getElementById('activtySave').value="yes";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
