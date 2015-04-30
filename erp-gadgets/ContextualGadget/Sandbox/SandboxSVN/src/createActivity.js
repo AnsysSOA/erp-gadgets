@@ -299,7 +299,7 @@ try
 			m--;
 		}
 		//document.CRMActivity.reset(); -- Comented by venkatesan
-      alert("After reset");
+    //  alert("After reset");
 	   document.getElementById('classValue').innerHTML = ""; 
 		document.getElementById('activtySave').value="yes";
 		document.getElementById('timeSpentValue').innerHTML = "";
