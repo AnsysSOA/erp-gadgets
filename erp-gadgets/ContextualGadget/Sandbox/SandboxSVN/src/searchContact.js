@@ -94,6 +94,9 @@ try
 				//alert("Before send to Siebel :"+ soapMsg);
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
+				contactData =soapMsg;
+				contactSOAPAction=SOAPAction;
+				contactSaveCount=0;
 				invokeSiebeWebservice(soapMsg,SOAPAction,'contactResponse');
 			}
 		else
@@ -123,6 +126,7 @@ debug("Inside searchContactResult method Response authErrorText",searchContactRe
 var searchContactResultObjText = searchContactResultObj.text;
 if(searchContactResultObj.rc=="200")
 {
+	contactSaveCount=3;
 deleteAllRow("contactAvailable");
 var table = document.getElementById("contactAvailable");
 var text=searchContactResultObjText;
@@ -266,18 +270,38 @@ else
 	{
 	gadgets.window.adjustHeight(300);
 	debug("Inside searchContactResult method Contact Query Failure");
-	if(searchContactResultObj.text==null||searchContactResultObj.text=="")
+	contactSaveCount=3;
+	/*if(searchContactResultObj.text==null||searchContactResultObj.text=="")
 		{
 	debug("Inside searchContactResult method Contact Query Failure with empty text");
 	document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 	else
-		{
+		{*/
+		if(contactSaveCount!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
+		  {
+		  	setTimeout(function(){contactSaveCount =contactSaveCount+1;invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse')}, 15000);
+		  	
+		  }
+		  else if(searchContactResultObj.text!=null||searchContactResultObj.text!="")
+		  {	
+		  	contactSaveCount=3;
 		document.getElementById('Contact_div').innerHTML = 'Contact Query Failure : '+searchContactResultObj.text;
 		}
+		else
+			{
+				contactSaveCount=3;
+			debug("Inside searchContactResult method Contact Query Failure with empty text");
+			document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+		}
+		//}
 	}
+	debug("Inside searchContactResult contactSaveCount :",contactSaveCount);
+if(contactSaveCount==3)
+{
 document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
 document.getElementById('contactloading').style.visibility = 'invisible';
 debug("Inside searchContactResult method End","");
+}
 }
