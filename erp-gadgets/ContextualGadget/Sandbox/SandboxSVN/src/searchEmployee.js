@@ -85,6 +85,9 @@ try
 			debug("Inside searchEmployee method Before send Employee Data to siebel .",soapMsg);
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
+			employeeData =soapMsg;
+			employeeSOAPAction =SOAPAction;
+			employeeSaveCount=0;
 			invokeSiebeWebservice(soapMsg,SOAPAction,'employeeResponse');
 		}
 		else
@@ -115,6 +118,7 @@ debug("Inside searchEmployeeResult method Employee Response authErrorText",searc
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
 {
+	employeeSaveCount=3;
 deleteAllRow("employeeAvailable");
 var table = document.getElementById("employeeAvailable");
 var text=searchEmployeeResultObjText;
@@ -245,18 +249,31 @@ debug("Inside searchEmployeeResult method Exception",e);
 else
 	{
 	gadgets.window.adjustHeight(300);
+//	employeeSaveCount=3;
 	debug("Inside searchEmployeeResult method Employee Query Failure");
-	if(searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")
+	debug("Inside searchEmployeeResult method Employee Query Failure employeeSaveCount:"+employeeSaveCount);
+	if((searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")&&employeeSaveCount!=3)
 		{
 	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
-	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+	setTimeout(function(){employeeSaveCount=employeeSaveCount+1;invokeSiebeWebservice(employeeData,employeeSOAPAction,'employeeResponse')}, 15000);
+		
 		}
-	else
+	else if(searchEmployeeResultObj.text!=null||searchEmployeeResultObj.text!="")
 		{
+			employeeSaveCount=3;
 		document.getElementById('Employee_div').innerHTML = 'Employee Query Failure : '+searchEmployeeResultObj.text;
 		}
+	else
+	{
+		employeeSaveCount=3;
+	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+		}
+	
 	}
+if(employeeSaveCount==3)
+{
 document.getElementById('Employeeloading').innerHTML = '';
 document.getElementById('Employeeloading').style.display = 'none';
 document.getElementById('Employeeloading').style.visibility = 'invisible';
+}
 }
